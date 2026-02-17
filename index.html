@@ -156,52 +156,12 @@ function drawSS(){
   g.addColorStop(0,`rgba(255,250,230,${a})`);g.addColorStop(1,'rgba(255,250,230,0)');ctx.strokeStyle=g;ctx.lineWidth=2.5;ctx.beginPath();ctx.moveTo(s.x,s.y);ctx.lineTo(s.x-s.vx/h*s.len,s.y-s.vy/h*s.len);ctx.stroke()}
 }
 
-// ---- Sagittarius constellation (teapot asterism) ----
-const SGR_STARS=[
-  [.25,.20,2.8,.8],  // γ Nash (spout tip)
-  [.34,.30,3.2,1],   // ε Kaus Australis (brightest)
-  [.38,.18,3.0,.85], // δ Kaus Media
-  [.46,.11,2.4,.7],  // λ Kaus Borealis (lid)
-  [.58,.13,2.4,.65], // φ Phi
-  [.66,.20,3.0,.9],  // σ Nunki
-  [.62,.32,2.2,.6],  // τ Tau
-  [.50,.32,2.6,.75], // ζ Ascella
-];
-const SGR_LINES=[[0,1],[0,2],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,1],[2,4]];
-
-function drawConstellation(t){
-  // connecting lines
-  ctx.strokeStyle='rgba(180,200,220,.35)';
-  ctx.lineWidth=1.2;
-  for(const[a,b]of SGR_LINES){
-    const ax=SGR_STARS[a][0]*W,ay=SGR_STARS[a][1]*H;
-    const bx=SGR_STARS[b][0]*W,by=SGR_STARS[b][1]*H;
-    ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);ctx.stroke();
-  }
-  // stars with glow
-  for(const[xp,yp,r,br]of SGR_STARS){
-    const x=xp*W,y=yp*H;
-    const pulse=br*(.85+Math.sin(t*.4+xp*10)*.15);
-    // outer glow
-    const g=ctx.createRadialGradient(x,y,0,x,y,r*5);
-    g.addColorStop(0,`rgba(200,210,230,${pulse*.45})`);
-    g.addColorStop(1,'rgba(200,210,230,0)');
-    ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,r*6,0,6.28);ctx.fill();
-    // core star
-    ctx.globalAlpha=pulse;
-    ctx.fillStyle='#e8eaf0';
-    ctx.beginPath();ctx.arc(x,y,r,0,6.28);ctx.fill();
-    ctx.globalAlpha=1;
-  }
-}
-
 // ---- main loop ----
 let t0=null;
 function render(ts){
   if(!t0)t0=ts;
   const el=(ts-t0)/1000,t=el;
   ctx.clearRect(0,0,W,H);
-  drawConstellation(t);
   drawStars(t);
   maybeSS();drawSS();
   requestAnimationFrame(render);
