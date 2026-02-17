@@ -14,9 +14,9 @@ canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1}
 
 /* ---- Hero ---- */
 .hero{height:100vh;height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:10vh;text-align:center}
-.hero-line{font-size:clamp(14px,3.8vw,18px);letter-spacing:.5em;color:#e0d8c8;text-shadow:0 0 12px rgba(255,255,255,.3);opacity:0;animation:fi 1.5s 1s ease forwards;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300}
-.hero-title{font-size:clamp(48px,14vw,68px);font-weight:700;letter-spacing:.2em;color:#fff;text-shadow:0 0 50px rgba(255,255,255,.35),0 0 20px rgba(201,168,76,.4);margin:12px 0 8px;opacity:0;animation:fi 1.8s 1.5s ease forwards}
-.hero-sub{font-size:clamp(16px,4vw,22px);letter-spacing:.8em;color:#d0c8b8;text-shadow:0 0 10px rgba(255,255,255,.2);font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;animation:fi 1.5s 2s ease forwards}
+.hero-line{font-size:clamp(16px,4.2vw,20px);letter-spacing:.5em;color:#e0d8c8;text-shadow:0 0 12px rgba(255,255,255,.3);opacity:0;animation:fi 1.5s 1s ease forwards;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300}
+.hero-title{font-size:clamp(52px,15vw,72px);font-weight:700;letter-spacing:.2em;color:#fff;text-shadow:0 0 50px rgba(255,255,255,.35),0 0 20px rgba(201,168,76,.4);margin:12px 0 8px;opacity:0;animation:fi 1.8s 1.5s ease forwards}
+.hero-sub{font-size:clamp(18px,4.5vw,24px);letter-spacing:.8em;color:#d0c8b8;text-shadow:0 0 10px rgba(255,255,255,.2);font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;animation:fi 1.5s 2s ease forwards}
 .scroll-hint{position:absolute;bottom:3vh;left:50%;transform:translateX(-50%);font-size:11px;color:#4a4840;letter-spacing:.2em;opacity:0;animation:fi 1s 3s ease forwards}
 .scroll-hint span{display:block;margin-top:4px;animation:bob 2s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
@@ -26,9 +26,9 @@ canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1}
 .quote-block{margin-bottom:28px;opacity:0;transform:translateY(20px);transition:all 1.2s ease}
 .quote-block.show{opacity:1;transform:translateY(0)}
 .quote-block:nth-child(2){transition-delay:.2s}
-.quote-text{font-size:clamp(18px,4.8vw,22px);line-height:2.2;color:#fff;text-shadow:0 0 15px rgba(255,255,255,.25);letter-spacing:.08em}
-.quote-src{margin-top:8px;font-size:clamp(12px,3vw,14px);color:#a09888;letter-spacing:.2em}
-.quote-title{margin-top:10px;font-size:clamp(22px,6vw,30px);color:#fff;text-shadow:0 0 20px rgba(255,255,255,.3),0 0 40px rgba(201,168,76,.2);letter-spacing:.3em;font-weight:600;opacity:0;transform:translateY(20px);transition:all 1s .4s ease}
+.quote-text{font-size:clamp(20px,5.2vw,24px);line-height:2.2;color:#fff;text-shadow:0 0 15px rgba(255,255,255,.25);letter-spacing:.08em}
+.quote-src{margin-top:8px;font-size:clamp(14px,3.5vw,16px);color:#a09888;letter-spacing:.2em}
+.quote-title{margin-top:10px;font-size:clamp(26px,7vw,34px);color:#fff;text-shadow:0 0 20px rgba(255,255,255,.3),0 0 40px rgba(201,168,76,.2);letter-spacing:.3em;font-weight:600;opacity:0;transform:translateY(20px);transition:all 1s .4s ease}
 .quote-title.show{opacity:1;transform:translateY(0)}
 
 /* ---- Divider ---- */
@@ -39,21 +39,21 @@ canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1}
 
 /* ---- Blessing body ---- */
 .blessing{min-height:50vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6vh 28px;text-align:center}
-.bless-body{max-width:360px;font-size:clamp(18px,4.8vw,22px);line-height:2.4;color:#fff;text-shadow:0 0 12px rgba(255,255,255,.2);letter-spacing:.08em;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;transform:translateY(20px);transition:all 1.2s ease}
+.bless-body{max-width:360px;font-size:clamp(20px,5.2vw,24px);line-height:2.4;color:#fff;text-shadow:0 0 12px rgba(255,255,255,.2);letter-spacing:.08em;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;transform:translateY(20px);transition:all 1.2s ease}
 .bless-body.show{opacity:1;transform:translateY(0)}
 
 /* ---- Greeting ---- */
 .greeting{min-height:55vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6vh 28px;text-align:center}
-.greet-head{font-size:clamp(24px,6.5vw,32px);color:#fff;text-shadow:0 0 20px rgba(255,255,255,.3),0 0 40px rgba(201,168,76,.2);letter-spacing:.25em;font-weight:600;opacity:0;transform:translateY(20px);transition:all 1s ease}
+.greet-head{font-size:clamp(28px,7.5vw,36px);color:#fff;text-shadow:0 0 20px rgba(255,255,255,.3),0 0 40px rgba(201,168,76,.2);letter-spacing:.25em;font-weight:600;opacity:0;transform:translateY(20px);transition:all 1s ease}
 .greet-head.show{opacity:1;transform:translateY(0)}
-.greet-body{margin-top:28px;max-width:360px;font-size:clamp(18px,4.8vw,22px);line-height:2.4;color:#fff;text-shadow:0 0 12px rgba(255,255,255,.2);letter-spacing:.08em;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;transform:translateY(20px);transition:all 1.2s .2s ease}
+.greet-body{margin-top:28px;max-width:360px;font-size:clamp(20px,5.2vw,24px);line-height:2.4;color:#fff;text-shadow:0 0 12px rgba(255,255,255,.2);letter-spacing:.08em;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;transform:translateY(20px);transition:all 1.2s .2s ease}
 .greet-body.show{opacity:1;transform:translateY(0)}
 
 /* ---- Signature ---- */
 .signature{min-height:40vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6vh 28px 12vh;text-align:center}
-.sig-info{font-size:clamp(15px,3.8vw,18px);line-height:2.4;color:#d0c8b8;text-shadow:0 0 10px rgba(255,255,255,.15);letter-spacing:.12em;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;transform:translateY(15px);transition:all 1s ease}
+.sig-info{font-size:clamp(17px,4.2vw,20px);line-height:2.4;color:#d0c8b8;text-shadow:0 0 10px rgba(255,255,255,.15);letter-spacing:.12em;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;transform:translateY(15px);transition:all 1s ease}
 .sig-info.show{opacity:1;transform:translateY(0)}
-.sig-name{margin-top:28px;font-size:clamp(16px,4vw,20px);color:#fff;text-shadow:0 0 15px rgba(255,255,255,.25);letter-spacing:.2em;opacity:0;transition:all 1s .2s ease}
+.sig-name{margin-top:28px;font-size:clamp(18px,4.5vw,22px);color:#fff;text-shadow:0 0 15px rgba(255,255,255,.25);letter-spacing:.2em;opacity:0;transition:all 1s .2s ease}
 .sig-name.show{opacity:1}
 
 @keyframes fi{from{opacity:0}to{opacity:1}}
@@ -149,11 +149,11 @@ function drawStars(t){
 
 // ---- shooting stars (bigger & brighter) ----
 let ss=[];
-function maybeSS(){if(Math.random()<.005&&ss.length<2){const a=.3+Math.random()*.4;ss.push({x:Math.random()*W*.8+W*.1,y:Math.random()*H*.3,vx:Math.cos(a)*6,vy:Math.sin(a)*6,life:1,len:80+Math.random()*80})}}
+function maybeSS(){if(Math.random()<.012&&ss.length<3){const a=.3+Math.random()*.4;ss.push({x:Math.random()*W*.8+W*.1,y:Math.random()*H*.4,vx:Math.cos(a)*7,vy:Math.sin(a)*7,life:1,len:120+Math.random()*100})}}
 function drawSS(){
-  for(let i=ss.length-1;i>=0;i--){const s=ss[i];s.x+=s.vx;s.y+=s.vy;s.life-=.01;if(s.life<=0){ss.splice(i,1);continue}
-  const a=Math.min(s.life,.7),h=Math.hypot(s.vx,s.vy),g=ctx.createLinearGradient(s.x,s.y,s.x-s.vx/h*s.len,s.y-s.vy/h*s.len);
-  g.addColorStop(0,`rgba(230,222,200,${a})`);g.addColorStop(1,'rgba(230,222,200,0)');ctx.strokeStyle=g;ctx.lineWidth=1.8;ctx.beginPath();ctx.moveTo(s.x,s.y);ctx.lineTo(s.x-s.vx/h*s.len,s.y-s.vy/h*s.len);ctx.stroke()}
+  for(let i=ss.length-1;i>=0;i--){const s=ss[i];s.x+=s.vx;s.y+=s.vy;s.life-=.008;if(s.life<=0){ss.splice(i,1);continue}
+  const a=Math.min(s.life,.8),h=Math.hypot(s.vx,s.vy),g=ctx.createLinearGradient(s.x,s.y,s.x-s.vx/h*s.len,s.y-s.vy/h*s.len);
+  g.addColorStop(0,`rgba(255,250,230,${a})`);g.addColorStop(1,'rgba(255,250,230,0)');ctx.strokeStyle=g;ctx.lineWidth=2.5;ctx.beginPath();ctx.moveTo(s.x,s.y);ctx.lineTo(s.x-s.vx/h*s.len,s.y-s.vy/h*s.len);ctx.stroke()}
 }
 
 // ---- main loop ----
