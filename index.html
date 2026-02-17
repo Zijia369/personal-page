@@ -171,26 +171,20 @@ function render(ts){
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})},{threshold:.15});
 document.querySelectorAll('[data-r]').forEach(el=>obs.observe(el));
 
-// ---- auto scroll on click ----
-let autoRunning=false,autoTimer=null;
-function startAutoScroll(){
-  if(autoRunning)return;
-  autoRunning=true;
-  const total=document.documentElement.scrollHeight-innerHeight;
-  const duration=total/0.5; // 0.5px per frame ≈ slow steady scroll
-  let start=null,startY=scrollY;
-  function step(ts){
-    if(!autoRunning)return;
-    if(!start)start=ts;
-    const elapsed=ts-start;
-    const progress=Math.min(elapsed/duration,1);
-    window.scrollTo(0,startY+(total-startY)*progress);
-    if(progress<1)requestAnimationFrame(step);
+// ---- auto scroll ----
+let autoRunning=true;
+function autoScroll(){
+  if(!autoRunning)return;
+  const max=document.documentElement.scrollHeight-innerHeight;
+  if(scrollY<max){
+    window.scrollBy(0,0.6);
   }
-  requestAnimationFrame(step);
+  requestAnimationFrame(autoScroll);
 }
-document.addEventListener('click',startAutoScroll,{once:true});
-document.addEventListener('touchend',startAutoScroll,{once:true});
+setTimeout(autoScroll,500);
+// user touch/wheel stops auto scroll
+addEventListener('touchstart',()=>{autoRunning=false},{once:true});
+addEventListener('wheel',()=>{autoRunning=false},{once:true});
 
 // ---- init ----
 resize();requestAnimationFrame(render);
