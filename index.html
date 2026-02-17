@@ -7,16 +7,16 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:#060910 url('photo-1419242902214-272b3f66ee7a.avif') center center/cover no-repeat fixed;color:#d8d0c0;font-family:'STSongti-SC','Songti SC','SimSun',serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{background:#060910 url('带签字马星空.jpg') center center/cover no-repeat fixed;color:#d8d0c0;font-family:'STSongti-SC','Songti SC','SimSun',serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 .vignette{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 50% 40%,transparent 20%,rgba(6,9,16,.55) 100%)}
 canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1}
 .content{position:relative;z-index:2;max-width:420px;margin:0 auto}
 
 /* ---- Hero ---- */
 .hero{height:100vh;height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:10vh;text-align:center}
-.hero-line{font-size:clamp(16px,4.2vw,20px);letter-spacing:.5em;color:#e0d8c8;text-shadow:0 0 12px rgba(255,255,255,.3);opacity:0;animation:fi 1.5s 1s ease forwards;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300}
-.hero-title{font-size:clamp(52px,15vw,72px);font-weight:700;letter-spacing:.2em;color:#fff;text-shadow:0 0 50px rgba(255,255,255,.35),0 0 20px rgba(201,168,76,.4);margin:12px 0 8px;opacity:0;animation:fi 1.8s 1.5s ease forwards}
-.hero-sub{font-size:clamp(18px,4.5vw,24px);letter-spacing:.8em;color:#d0c8b8;text-shadow:0 0 10px rgba(255,255,255,.2);font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;animation:fi 1.5s 2s ease forwards}
+.hero-line{font-size:clamp(16px,4.2vw,20px);letter-spacing:.5em;color:#fff;text-shadow:0 0 20px rgba(255,255,255,.6),0 0 40px rgba(200,180,255,.3);opacity:0;animation:fi 1.5s 1s ease forwards;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300}
+.hero-title{font-size:clamp(52px,15vw,72px);font-weight:700;letter-spacing:.2em;color:#fff;text-shadow:0 0 30px rgba(255,255,255,.8),0 0 60px rgba(200,180,255,.4),0 0 100px rgba(160,140,220,.2);margin:12px 0 8px;opacity:0;animation:fi 1.8s 1.5s ease forwards}
+.hero-sub{font-size:clamp(18px,4.5vw,24px);letter-spacing:.8em;color:#fff;text-shadow:0 0 20px rgba(255,255,255,.5),0 0 40px rgba(200,180,255,.3);font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;animation:fi 1.5s 2s ease forwards}
 .scroll-hint{position:absolute;bottom:3vh;left:50%;transform:translateX(-50%);font-size:11px;color:#4a4840;letter-spacing:.2em;opacity:0;animation:fi 1s 3s ease forwards}
 .scroll-hint span{display:block;margin-top:4px;animation:bob 2s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
@@ -26,34 +26,34 @@ canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1}
 .quote-block{margin-bottom:28px;opacity:0;transform:translateY(20px);transition:all 1.2s ease}
 .quote-block.show{opacity:1;transform:translateY(0)}
 .quote-block:nth-child(2){transition-delay:.2s}
-.quote-text{font-size:clamp(20px,5.2vw,24px);line-height:2.2;color:#fff;text-shadow:0 0 15px rgba(255,255,255,.25);letter-spacing:.08em}
-.quote-src{margin-top:8px;font-size:clamp(14px,3.5vw,16px);color:#a09888;letter-spacing:.2em}
-.quote-title{margin-top:10px;font-size:clamp(24px,6.5vw,32px);color:#fff;text-shadow:0 0 20px rgba(255,255,255,.3),0 0 40px rgba(201,168,76,.2);letter-spacing:.2em;font-weight:600;white-space:nowrap;opacity:0;transform:translateY(20px);transition:all 1s .4s ease}
+.quote-text{font-size:clamp(20px,5.2vw,24px);line-height:2.2;color:#fff;text-shadow:0 0 20px rgba(255,255,255,.6),0 0 40px rgba(200,180,255,.3);letter-spacing:.08em}
+.quote-src{margin-top:8px;font-size:clamp(14px,3.5vw,16px);color:#d0c8e0;text-shadow:0 0 10px rgba(255,255,255,.3);letter-spacing:.2em}
+.quote-title{margin-top:10px;font-size:clamp(24px,6.5vw,32px);color:#fff;text-shadow:0 0 25px rgba(255,255,255,.7),0 0 50px rgba(200,180,255,.4);letter-spacing:.2em;font-weight:600;white-space:nowrap;opacity:0;transform:translateY(20px);transition:all 1s .4s ease}
 .quote-title.show{opacity:1;transform:translateY(0)}
 
 /* ---- Divider ---- */
 .divider{display:flex;align-items:center;justify-content:center;padding:0 40px;opacity:0;transition:all 1s ease}
 .divider.show{opacity:1}
-.divider-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.15),transparent)}
-.divider-dot{width:3px;height:3px;border-radius:50%;background:rgba(201,168,76,.25);margin:0 14px}
+.divider-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(220,200,255,.3),transparent)}
+.divider-dot{width:4px;height:4px;border-radius:50%;background:rgba(220,200,255,.5);box-shadow:0 0 8px rgba(200,180,255,.4);margin:0 14px}
 
 /* ---- Blessing body ---- */
 .blessing{min-height:50vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6vh 28px;text-align:center}
-.bless-body{max-width:360px;font-size:clamp(20px,5.2vw,24px);line-height:2.4;color:#fff;text-shadow:0 0 12px rgba(255,255,255,.2);letter-spacing:.08em;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;transform:translateY(20px);transition:all 1.2s ease}
+.bless-body{max-width:360px;font-size:clamp(20px,5.2vw,24px);line-height:2.4;color:#fff;text-shadow:0 0 20px rgba(255,255,255,.6),0 0 40px rgba(200,180,255,.3);letter-spacing:.08em;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;transform:translateY(20px);transition:all 1.2s ease}
 .bless-body.show{opacity:1;transform:translateY(0)}
 
 /* ---- Greeting ---- */
 .greeting{min-height:55vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6vh 28px;text-align:center}
-.greet-head{font-size:clamp(28px,7.5vw,36px);color:#fff;text-shadow:0 0 20px rgba(255,255,255,.3),0 0 40px rgba(201,168,76,.2);letter-spacing:.25em;font-weight:600;opacity:0;transform:translateY(20px);transition:all 1s ease}
+.greet-head{font-size:clamp(28px,7.5vw,36px);color:#fff;text-shadow:0 0 25px rgba(255,255,255,.7),0 0 50px rgba(200,180,255,.4);letter-spacing:.25em;font-weight:600;opacity:0;transform:translateY(20px);transition:all 1s ease}
 .greet-head.show{opacity:1;transform:translateY(0)}
-.greet-body{margin-top:28px;max-width:360px;font-size:clamp(20px,5.2vw,24px);line-height:2.4;color:#fff;text-shadow:0 0 12px rgba(255,255,255,.2);letter-spacing:.08em;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;transform:translateY(20px);transition:all 1.2s .2s ease}
+.greet-body{margin-top:28px;max-width:360px;font-size:clamp(20px,5.2vw,24px);line-height:2.4;color:#fff;text-shadow:0 0 20px rgba(255,255,255,.6),0 0 40px rgba(200,180,255,.3);letter-spacing:.08em;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;transform:translateY(20px);transition:all 1.2s .2s ease}
 .greet-body.show{opacity:1;transform:translateY(0)}
 
 /* ---- Signature ---- */
 .signature{min-height:40vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6vh 28px 12vh;text-align:center}
-.sig-info{font-size:clamp(17px,4.2vw,20px);line-height:2.4;color:#d0c8b8;text-shadow:0 0 10px rgba(255,255,255,.15);letter-spacing:.12em;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;transform:translateY(15px);transition:all 1s ease}
+.sig-info{font-size:clamp(17px,4.2vw,20px);line-height:2.4;color:#fff;text-shadow:0 0 18px rgba(255,255,255,.5),0 0 36px rgba(200,180,255,.25);letter-spacing:.12em;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;transform:translateY(15px);transition:all 1s ease}
 .sig-info.show{opacity:1;transform:translateY(0)}
-.sig-name{margin-top:28px;font-size:clamp(18px,4.5vw,22px);color:#fff;text-shadow:0 0 15px rgba(255,255,255,.25);letter-spacing:.2em;opacity:0;transition:all 1s .2s ease}
+.sig-name{margin-top:28px;font-size:clamp(18px,4.5vw,22px);color:#fff;text-shadow:0 0 20px rgba(255,255,255,.6),0 0 40px rgba(200,180,255,.3);letter-spacing:.2em;opacity:0;transition:all 1s .2s ease}
 .sig-name.show{opacity:1}
 
 @keyframes fi{from{opacity:0}to{opacity:1}}
