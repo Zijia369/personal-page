@@ -3,46 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>子嘉祝君 · 丙午新春</title>
-<link rel="stylesheet" href="https://chinese-fonts-cdn.deno.dev/packages/ysbzt/dist/%E5%B3%84%E5%B1%B1%E7%A2%91%E7%AF%86%E4%BD%93/result.css" />
+<title>晴祝君 · 丙午新春</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:#060910 url('photo-1419242902214-272b3f66ee7a.avif') center center/cover no-repeat fixed;color:#d8d0c0;font-family:'STSongti-SC','Songti SC','SimSun',serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 .vignette{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 50% 40%,transparent 20%,rgba(6,9,16,.55) 100%)}
 canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1}
-.content{position:relative;z-index:2}
+.content{position:relative;z-index:2;max-width:420px;margin:0 auto}
 
-.hero{height:100vh;height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:8vh;text-align:center}
-.hero-line{font-size:clamp(11px,2.8vw,13px);letter-spacing:.5em;color:#9a9282;opacity:0;animation:fi 1.5s 5.5s ease forwards;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300}
-.hero-title{font-size:clamp(36px,9.5vw,52px);font-weight:700;letter-spacing:.18em;color:#c9a84c;text-shadow:0 0 35px rgba(201,168,76,.2);margin:10px 0 6px;opacity:0;animation:fi 1.8s 6s ease forwards}
-.hero-sub{font-size:clamp(11px,2.8vw,14px);letter-spacing:.6em;color:#8a8278;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;animation:fi 1.5s 6.6s ease forwards}
-.scroll-hint{position:absolute;bottom:2.5vh;left:50%;transform:translateX(-50%);font-size:10px;color:#3a3830;letter-spacing:.2em;opacity:0;animation:fi 1s 7.5s ease forwards}
+/* ---- Hero ---- */
+.hero{height:100vh;height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:10vh;text-align:center}
+.hero-line{font-size:clamp(14px,3.8vw,18px);letter-spacing:.5em;color:#e0d8c8;text-shadow:0 0 12px rgba(255,255,255,.3);opacity:0;animation:fi 1.5s 1s ease forwards;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300}
+.hero-title{font-size:clamp(48px,14vw,68px);font-weight:700;letter-spacing:.2em;color:#fff;text-shadow:0 0 50px rgba(255,255,255,.35),0 0 20px rgba(201,168,76,.4);margin:12px 0 8px;opacity:0;animation:fi 1.8s 1.5s ease forwards}
+.hero-sub{font-size:clamp(16px,4vw,22px);letter-spacing:.8em;color:#d0c8b8;text-shadow:0 0 10px rgba(255,255,255,.2);font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;animation:fi 1.5s 2s ease forwards}
+.scroll-hint{position:absolute;bottom:3vh;left:50%;transform:translateX(-50%);font-size:11px;color:#4a4840;letter-spacing:.2em;opacity:0;animation:fi 1s 3s ease forwards}
 .scroll-hint span{display:block;margin-top:4px;animation:bob 2s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
 
-.blessing{min-height:75vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10vh 32px;text-align:center}
-.bless-head{font-size:clamp(22px,6vw,28px);color:#c9a84c;letter-spacing:.25em;font-weight:600;opacity:0;transform:translateY(20px);transition:all 1s ease}
-.bless-head.show{opacity:1;transform:translateY(0)}
-.bless-quote{margin-top:28px;font-size:clamp(14px,3.6vw,17px);line-height:2.2;color:#a89880;letter-spacing:.06em;opacity:0;transform:translateY(20px);transition:all 1.2s .2s ease}
-.bless-quote.show{opacity:1;transform:translateY(0)}
-.bless-quote em{font-style:normal;color:#baa878}
-.bless-quote .src{display:block;margin-top:12px;font-size:clamp(10px,2.5vw,12px);color:#5a5448;letter-spacing:.2em}
-.bless-body{margin-top:32px;max-width:340px;font-size:clamp(14px,3.6vw,16px);line-height:2.2;color:#b0a898;letter-spacing:.05em;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;transform:translateY(20px);transition:all 1.2s .4s ease}
-.bless-body.show{opacity:1;transform:translateY(0)}
+/* ---- Quotes ---- */
+.quotes{min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8vh 28px;text-align:center}
+.quote-block{margin-bottom:28px;opacity:0;transform:translateY(20px);transition:all 1.2s ease}
+.quote-block.show{opacity:1;transform:translateY(0)}
+.quote-block:nth-child(2){transition-delay:.2s}
+.quote-text{font-size:clamp(18px,4.8vw,22px);line-height:2.2;color:#fff;text-shadow:0 0 15px rgba(255,255,255,.25);letter-spacing:.08em}
+.quote-src{margin-top:8px;font-size:clamp(12px,3vw,14px);color:#a09888;letter-spacing:.2em}
+.quote-title{margin-top:10px;font-size:clamp(22px,6vw,30px);color:#fff;text-shadow:0 0 20px rgba(255,255,255,.3),0 0 40px rgba(201,168,76,.2);letter-spacing:.3em;font-weight:600;opacity:0;transform:translateY(20px);transition:all 1s .4s ease}
+.quote-title.show{opacity:1;transform:translateY(0)}
 
+/* ---- Divider ---- */
 .divider{display:flex;align-items:center;justify-content:center;padding:0 40px;opacity:0;transition:all 1s ease}
 .divider.show{opacity:1}
-.divider-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.12),transparent)}
+.divider-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.15),transparent)}
 .divider-dot{width:3px;height:3px;border-radius:50%;background:rgba(201,168,76,.25);margin:0 14px}
 
-.signature{min-height:40vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6vh 28px 10vh;text-align:center}
-.sig-info{font-size:clamp(11px,2.6vw,12px);line-height:2;color:#6a6458;letter-spacing:.1em;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;transform:translateY(15px);transition:all 1s ease}
-.sig-info.show{opacity:.7;transform:translateY(0)}
-.seal{margin-top:22px;width:58px;height:58px;border:2.5px solid rgba(140,52,42,.6);border-radius:3px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:18px;font-weight:400;color:rgba(140,52,42,.6);line-height:1.2;letter-spacing:2px;transform:rotate(-4deg);font-family:'峄山碑篆体','STFangsong','FangSong',serif;opacity:0;transition:all 1s .2s ease}
-.seal.show{opacity:1}
-.sig-date{margin-top:14px;font-size:10px;color:#3a3428;letter-spacing:.3em;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;transition:all 1s .3s ease}
-.sig-date.show{opacity:.5}
+/* ---- Blessing body ---- */
+.blessing{min-height:50vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6vh 28px;text-align:center}
+.bless-body{max-width:360px;font-size:clamp(18px,4.8vw,22px);line-height:2.4;color:#fff;text-shadow:0 0 12px rgba(255,255,255,.2);letter-spacing:.08em;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;transform:translateY(20px);transition:all 1.2s ease}
+.bless-body.show{opacity:1;transform:translateY(0)}
+
+/* ---- Greeting ---- */
+.greeting{min-height:55vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6vh 28px;text-align:center}
+.greet-head{font-size:clamp(24px,6.5vw,32px);color:#fff;text-shadow:0 0 20px rgba(255,255,255,.3),0 0 40px rgba(201,168,76,.2);letter-spacing:.25em;font-weight:600;opacity:0;transform:translateY(20px);transition:all 1s ease}
+.greet-head.show{opacity:1;transform:translateY(0)}
+.greet-body{margin-top:28px;max-width:360px;font-size:clamp(18px,4.8vw,22px);line-height:2.4;color:#fff;text-shadow:0 0 12px rgba(255,255,255,.2);letter-spacing:.08em;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;transform:translateY(20px);transition:all 1.2s .2s ease}
+.greet-body.show{opacity:1;transform:translateY(0)}
+
+/* ---- Signature ---- */
+.signature{min-height:40vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6vh 28px 12vh;text-align:center}
+.sig-info{font-size:clamp(15px,3.8vw,18px);line-height:2.4;color:#d0c8b8;text-shadow:0 0 10px rgba(255,255,255,.15);letter-spacing:.12em;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;transform:translateY(15px);transition:all 1s ease}
+.sig-info.show{opacity:1;transform:translateY(0)}
+.sig-name{margin-top:28px;font-size:clamp(16px,4vw,20px);color:#fff;text-shadow:0 0 15px rgba(255,255,255,.25);letter-spacing:.2em;opacity:0;transition:all 1s .2s ease}
+.sig-name.show{opacity:1}
 
 @keyframes fi{from{opacity:0}to{opacity:1}}
 </style>
@@ -51,6 +63,7 @@ canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1}
 <div class="vignette"></div>
 <canvas id="c"></canvas>
 <div class="content">
+
   <section class="hero">
     <div>
       <div class="hero-line">岁在丙午 · 离火重明</div>
@@ -59,33 +72,59 @@ canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1}
     </div>
     <div class="scroll-hint"><span>↓</span></div>
   </section>
-  <section class="blessing">
-    <div class="bless-head" data-r>子嘉祝君</div>
-    <div class="bless-quote" data-r>
-      <em>「万物皆相见，南方之卦也。」</em>
-      <span class="src">——《易 · 说卦》离</span>
+
+  <section class="quotes">
+    <div class="quote-block" data-r>
+      <div class="quote-text">「万物皆相见，南方之卦也。」</div>
+      <div class="quote-src">——《易 · 说卦》离</div>
     </div>
-    <div class="bless-body" data-r>
-      丙午重明，天火双照。<br>
-      一火照天地，万象可见；<br>
-      一火暖归途，行者不孤。<br><br>
-      愿君新岁如光而行，<br>
-      所遇皆温，所往皆明。
+    <div class="quote-block" data-r>
+      <div class="quote-text">「明两作，离。<br>大人以继明照于四方。」</div>
+      <div class="quote-src">——《易 · 离》大象</div>
     </div>
+    <div class="quote-title" data-r>丙午岁首，离火重明</div>
   </section>
+
   <div class="divider" data-r><div class="divider-line"></div><div class="divider-dot"></div><div class="divider-line"></div></div>
-  <section class="signature">
-    <div class="sig-info" data-r>上海交通大学 · 硕士 · MTT<br>AI × 传统文化</div>
-    <div class="seal" data-r>子<br>嘉</div>
-    <div class="sig-date" data-r>丙午年正月初一</div>
+
+  <section class="blessing">
+    <div class="bless-body" data-r>
+      明在天，万象可照；<br>
+      照天地，万象可见。<br><br>
+      明在心，归途自暖；<br>
+      暖归途，行者不孤。
+    </div>
   </section>
+
+  <div class="divider" data-r><div class="divider-line"></div><div class="divider-dot"></div><div class="divider-line"></div></div>
+
+  <section class="greeting">
+    <div class="greet-head" data-r>晴祝君：丙午马年</div>
+    <div class="greet-body" data-r>
+      愿君新岁如光而行，<br>
+      所遇皆温，所往皆明。<br><br>
+      愿君新岁如光而照，<br>
+      身在星辰，心有所归。
+    </div>
+  </section>
+
+  <div class="divider" data-r><div class="divider-line"></div><div class="divider-dot"></div><div class="divider-line"></div></div>
+
+  <section class="signature">
+    <div class="sig-info" data-r>
+      AI × 传统文化传承者<br>
+      山经 · 道医 · 磁科技探索者<br>
+      上海交通大学 · 硕士 · MTT
+    </div>
+    <div class="sig-name" data-r>——王一晴 敬贺</div>
+  </section>
+
 </div>
 
 <script>
 const cvs=document.getElementById('c'),ctx=cvs.getContext('2d');
 let W,H,dpr;
 
-// ---- resize ----
 function resize(){
   dpr=Math.min(devicePixelRatio||1,2);
   W=innerWidth;H=innerHeight;
@@ -108,13 +147,13 @@ function drawStars(t){
   ctx.globalAlpha=1;
 }
 
-// ---- shooting stars ----
+// ---- shooting stars (bigger & brighter) ----
 let ss=[];
-function maybeSS(){if(Math.random()<.003&&ss.length<2){const a=.3+Math.random()*.4;ss.push({x:Math.random()*W*.8+W*.1,y:Math.random()*H*.25,vx:Math.cos(a)*4,vy:Math.sin(a)*4,life:1,len:45+Math.random()*50})}}
+function maybeSS(){if(Math.random()<.005&&ss.length<2){const a=.3+Math.random()*.4;ss.push({x:Math.random()*W*.8+W*.1,y:Math.random()*H*.3,vx:Math.cos(a)*6,vy:Math.sin(a)*6,life:1,len:80+Math.random()*80})}}
 function drawSS(){
-  for(let i=ss.length-1;i>=0;i--){const s=ss[i];s.x+=s.vx;s.y+=s.vy;s.life-=.013;if(s.life<=0){ss.splice(i,1);continue}
-  const a=Math.min(s.life,.6),h=Math.hypot(s.vx,s.vy),g=ctx.createLinearGradient(s.x,s.y,s.x-s.vx/h*s.len,s.y-s.vy/h*s.len);
-  g.addColorStop(0,`rgba(225,218,195,${a})`);g.addColorStop(1,'rgba(225,218,195,0)');ctx.strokeStyle=g;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(s.x,s.y);ctx.lineTo(s.x-s.vx/h*s.len,s.y-s.vy/h*s.len);ctx.stroke()}
+  for(let i=ss.length-1;i>=0;i--){const s=ss[i];s.x+=s.vx;s.y+=s.vy;s.life-=.01;if(s.life<=0){ss.splice(i,1);continue}
+  const a=Math.min(s.life,.7),h=Math.hypot(s.vx,s.vy),g=ctx.createLinearGradient(s.x,s.y,s.x-s.vx/h*s.len,s.y-s.vy/h*s.len);
+  g.addColorStop(0,`rgba(230,222,200,${a})`);g.addColorStop(1,'rgba(230,222,200,0)');ctx.strokeStyle=g;ctx.lineWidth=1.8;ctx.beginPath();ctx.moveTo(s.x,s.y);ctx.lineTo(s.x-s.vx/h*s.len,s.y-s.vy/h*s.len);ctx.stroke()}
 }
 
 // ---- main loop ----
@@ -123,7 +162,6 @@ function render(ts){
   if(!t0)t0=ts;
   const el=(ts-t0)/1000,t=el;
   ctx.clearRect(0,0,W,H);
-
   drawStars(t);
   maybeSS();drawSS();
   requestAnimationFrame(render);
