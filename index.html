@@ -177,7 +177,7 @@ function autoScroll(){
   if(!autoRunning)return;
   const max=document.documentElement.scrollHeight-innerHeight;
   if(scrollY<max){
-    window.scrollBy(0,1.2);
+    window.scrollBy(0,1.5);
   }
   requestAnimationFrame(autoScroll);
 }
