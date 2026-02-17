@@ -171,6 +171,22 @@ function render(ts){
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})},{threshold:.15});
 document.querySelectorAll('[data-r]').forEach(el=>obs.observe(el));
 
+// ---- auto scroll ----
+const sections=document.querySelectorAll('.hero,.quotes,.blessing,.greeting,.signature');
+let autoIdx=0,autoTimer=null,autoStopped=false;
+function autoNext(){
+  if(autoStopped||autoIdx>=sections.length)return;
+  sections[autoIdx].scrollIntoView({behavior:'smooth'});
+  autoIdx++;
+  autoTimer=setTimeout(autoNext,autoIdx===1?4000:3500);
+}
+// start after hero animation
+autoTimer=setTimeout(autoNext,3500);
+// stop auto-scroll on user touch/wheel
+function stopAuto(){autoStopped=true;clearTimeout(autoTimer)}
+addEventListener('touchstart',stopAuto,{once:true});
+addEventListener('wheel',stopAuto,{once:true});
+
 // ---- init ----
 resize();requestAnimationFrame(render);
 </script>
